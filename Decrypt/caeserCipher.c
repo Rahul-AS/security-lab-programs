@@ -2,11 +2,11 @@
 int main()
 {
     //declaration of variables
-    int key, len, choice, mul=1;
+    int key, len, choice, mul=-1;
     char string [101];
     
     //getting the input from the user
-    printf("Enter the plain text: ");
+    printf("Enter the cipher text: ");
     scanf("%s%n", string, &len);
     printf("Enter the key: ");
     scanf("%d", &key);
@@ -20,11 +20,11 @@ int main()
             val = 65;
         }
         
-        //logic to encrypt the characters
+        //logic to decrypt character
         string[i]= ((((string[i] - val) + (key * mul)) % 26) + val);
     }
     
     //print the string
-    printf("Encrypted Text: %s", string);
+    printf("Decrypted Text: %s", string);
     return 0;
 }
